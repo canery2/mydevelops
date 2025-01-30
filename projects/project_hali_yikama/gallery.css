@@ -1,18 +1,127 @@
+body {
+  font-family: Arial;
+  margin: 0;
+} 
+
 * {
   box-sizing: border-box;
 }
 
+#logo1 {
+  background-color: #0077b6;
+  color: white;
+  width: 100%; 
+  padding: 1rem 0;
+  margin-left: 10px;
+}
+img {
+  vertical-align: left;
+}
+header {
+  background-color: #0077b6;
+  color: white;
+  width: 100%;
+  padding: 1rem 0;
+}
 /* Position the image container (needed to position the left and right arrows) */
 .container {
-  position: relative;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* Hide the images by default */
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header nav {
+  margin-top: 1rem;
+  
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.1rem;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+#header-image-menu img{
+  width: 100%;
+  margin: none;
+  padding: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+  width: 150px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .mySlides {
   display: none;
 }
 
-/* Add a pointer when hovering over the thumbnail images */
 .cursor {
   cursor: pointer;
 }
@@ -22,13 +131,14 @@
 .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 50%;
   width: auto;
   padding: 16px;
   margin-top: -50px;
   color: white;
   font-weight: bold;
   font-size: 20px;
+  transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
@@ -55,32 +165,30 @@
   top: 0;
 }
 
-/* Container for image text */
+img {
+  margin-bottom: 10px; height: auto;
+}
+
 .caption-container {
   text-align: center;
-  background-color: #222;
+  background-color: black;
   padding: 2px 16px;
   color: white;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
 .demo {
-  opacity: 0.6;
+  opacity: 0.6; 
 }
 
 .active,
 .demo:hover {
   opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
