@@ -8,32 +8,17 @@
         data-sap-ui-theme="sap_goldreflection" >
         </script>
         </head>
-        <body>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing
-            elitr,<br>
-            sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam erat,<br>
-            sed diam voluptua.
-            </p>
-            <p> At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren,
-            no sea takimata sanctus est
-            Lorem ipsum dolor sit amet.
-            </p>
-            <ol>
-            <li>First entry ordered list</li>
-            <li>Second entry ordered list</li>
-            </ol>
-            <ul>
-            <li>First entry unordered list</li>
-            <li>Second entry unordered list</li>
-            </ul>
-            <hr>
-            <blockquote>
-            Lorem ipsum dolor sit amet,
-            consetetur sadipscing elitr,
-            sed diam nonumy eirmod tempor invidunt ut
-            et dolore magna aliquyam erat.
-            </blockquote>
+        <body class="sapUiBody" role="application">
+            <div style="position:absolute; width:300px; height:150px; left:100px; top:100px;
+                        z-index:2; border:1px solid #000000;
+                        background-color:green">
+Division in green, by z-index:2 in the foreground
+</div>
+<div style="position:absolute; width:300px;
+height:150px; left:50px; top:50px;
+z-index:1; border:1px solid #000000;
+background-color:grey">
+Division in grey, by z-index:1 in the background
+</div>
             </body>
 </html>
