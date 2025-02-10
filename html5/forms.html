@@ -6,14 +6,22 @@
     <script src="resources/sap-ui-core.js" id="sap-ui-bootstrap" data-sap-ui-libs="sap.ui.commons"
         data-sap-ui-theme="sap_goldreflection">
         </script>
+        <link href="style.css" rel="stylesheet" />
+        <style type="text/css">
+            label {
+                    width: 100px;
+                    float: left;
+                    background-color: silver;
+            }
+        </style>
 </head>
 
 <body>
     <form method="get" action="http://targetserver">
         <fieldset id="timesheet">
             <legend>Time Sheet</legend>
-            <label for="name">Name</label>
-            <input type="text" name="name">
+            <label for="name" >Name</label>
+            <input type="text" name="name"style="background-color: yellow;">
             <br>
             <label for="task">Task</label>
             <select name="task" size="1">
