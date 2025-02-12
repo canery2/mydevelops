@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    function display(){
+    var oName = document.getElementById("day");
+    switch (oName.value) {
+        case "Monday":
+            alert("Garfield says: I hate Mondays!");
+            break;
+        case "Tuesday":
+            alert("At least it's not Monday");
+            break;
+        case "Wednesday":
+            alert("Better known as hump day");
+            break;
+        case "Thursday":
+            alert("Almost Friday");
+            break;
+        case "Friday":
+            alert("It is Friday");
+            break;
+            default:
+                alert("Weekend...!");
+            };
+          };
+        </script>
+      </head>
+      <body>
+        <form>
+          Tag: <input type="day" name="day" id="day">
+          <button type="button" onclick="display()">
+                  Submit
+          </button>
+        </form>
+      </body>
+    </html>
