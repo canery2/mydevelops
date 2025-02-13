@@ -4,34 +4,27 @@
   <meta charset="utf-8">
   <title>on demo</title>
   <style>
-  div {
+  p {
     color: red;
+    margin: 5px;
+    cursor: pointer;
+  }
+  p:hover {
+    background: yellow;
   }
   </style>
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
  
-<select name="sweets" multiple="multiple">
-  <option>Chocolate</option>
-  <option selected="selected">Candy</option>
-  <option>Taffy</option>
-  <option selected="selected">Caramel</option>
-  <option>Fudge</option>
-  <option>Cookie</option>
-</select>
-<div></div>
+<p>First Paragraph</p>
+<p>Second Paragraph</p>
+<p>Yet one more Paragraph</p>
  
 <script>
-$( "select" )
-  .on( "change", function() {
-    var str = "";
-    $( "select option:selected" ).each( function() {
-      str += $( this ).text() + " ";
-    } );
-    $( "div" ).text( str );
-  } )
-  .trigger( "change" );
+$( "p" ).on( "click", function() {
+  $( this ).slideUp();
+} ); 
 </script>
  
 </body>
