@@ -4,27 +4,29 @@
   <meta charset="utf-8">
   <title>on demo</title>
   <style>
-  p {
-    color: red;
-    margin: 5px;
-    cursor: pointer;
-  }
-  p:hover {
+  div {
+    background: blue;
+    color: white;
+    height: 100px;
+    width: 150px;
+ }
+  div.dbl {
     background: yellow;
+    color: black;
   }
   </style>
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
  
-<p>First Paragraph</p>
-<p>Second Paragraph</p>
-<p>Yet one more Paragraph</p>
+<div></div>
+<span>Double click the block</span>
  
 <script>
-$( "p" ).on( "click", function() {
-  $( this ).slideUp();
-} ); 
+var divdbl = $( "div" ).first();
+divdbl.on( "dblclick", function() {
+  divdbl.toggleClass( "dbl" );
+} );
 </script>
  
 </body>
