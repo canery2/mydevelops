@@ -1,32 +1,35 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>on demo</title>
+  <title>delegate demo</title>
   <style>
-  div {
-    background: blue;
-    color: white;
-    height: 100px;
-    width: 150px;
- }
-  div.dbl {
+  p {
     background: yellow;
-    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+  }
+  p.over {
+    background: #ccc;
+  }
+  span {
+    color: red;
   }
   </style>
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
  
-<div></div>
-<span>Double click the block</span>
+<p>Click me!</p>
+ 
+<span></span>
  
 <script>
-var divdbl = $( "div" ).first();
-divdbl.on( "dblclick", function() {
-  divdbl.toggleClass( "dbl" );
-} );
+$( "body" ).delegate( "p", "click", function() {
+  $( this ).after( "<p>Another paragraph!</p>" );
+});
 </script>
  
 </body>
