@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Animation</title>
+  <style>
+        p {
+            background-color  : light-gray;
+            width             : 100px;
+            border            : 1px solid black;
+        }
+  </style>
+  <script type="text/javascript"  src="jquery.js"> </script>
+  <script type="text/javascript">
+      $(document).ready(function() {
+              $("p").animate({
+                  width    : "70%",
+                  opacity  : 0.4,
+                  marginLeft  : "0.6in",
+                  fontSize    : "3em",
+                  borderWidth : "10px"
+            }, 1500 );
+
+    });
+  </script>
+</head>
+  <body>
+      <p id = "p1">First paragraph</p>
+      <p id = "p2">Second paragraph</p>
+  </body>
+</html>
