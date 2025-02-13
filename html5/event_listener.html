@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fly!</title>
+    <meta charset="UTF-8" />
+    <script type="text/javascript" src="jquery.js">
+        function display() {
+            var oName = document.getElementById("day");
+            var oOutput = document.getElementById("output");
+            oOutput.addEventListener(
+                'mouseover',
+                highlight,
+                false
+            );
+            oOutput.addEventListener(
+                'mouseout',
+                init,
+                false
+            );
+            switch (oName.value) {
+                case "Monday":
+                    oOutput.nodeValue = "Garfield says: I hate Mondays!";
+                    break;
+                // shortened, cf. Listing 2.13
+            };
+        }
+        function highlight() {
+
+            var oOutput = document.getElementById("output");
+            oOutput.style.color = "red";
+            oOutput.style.backgroundColor = "yellow";
+        }
+        function init() {
+            var oOutput = document.getElementById("output");
+            oOutput.style.color = "black";
+            oOutput.style.backgroundColor = "white";
+        }
+    </script>
+
+</head>
+
+<body >
+    <form>
+        Tag: <input type="day" name="day" id="day">
+        <button type="button" onclick="display()">
+            Submit
+        </button>
+    </form>
+    <p>What is there on this day to say?
+    <div id="output"></div>
+    </p>
+</body>
+
+</html>
