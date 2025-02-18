@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function button() {
+            // Call function
+            alert("Button pressed");
+        };
+        function loaded() {
+            alert("Page loaded");
+            console.log("Page loaded1");
+        };
+        /* Two entries are generated
+        in the console */
+        console.log("First entry");
+        console.log("Second entry");
+    </script>
+</head>
+
+<body onload="loaded()">
+    <button type="button" onclick="button()">
+        Call function
+    </button>
+</body>
+
+</html>

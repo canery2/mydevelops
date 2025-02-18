@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="resources/sap-ui-core.js" id="sap-ui-bootstrap" data-sap-ui-libs="sap.ui.commons"
+        data-sap-ui-theme="sap_goldreflection">
+        </script>
+        <link href="style.css" rel="stylesheet" />
+        <style type="text/css">
+            label {
+                    width: 100px;
+                    float: left;
+                    background-color: silver;
+            }
+        </style>
+</head>
+
+<body>
+    <form method="get" action="http://targetserver">
+        <fieldset id="timesheet">
+            <legend>Time Sheet</legend>
+            <label for="name" >Name</label>
+            <input type="text" name="name"style="background-color: yellow;">
+            <br>
+            <label for="task">Task</label>
+            <select name="task" size="1">
+                <option value"consulting">Consulting</option>
+                <option value"development">Development</option>
+            </select>
+            <br>
+            <label for="hour">Hour</label>
+            <input type="number" name="Hour" min="0" max="8" id="hours">
+            <br>
+            <label for="desc">Description</label>
+            <textarea name="desc" rows="3"></textarea>
+            <br>
+            <label for="billing">Billable</label>
+            <input type="checkbox" name="billing" id="BILL">
+            <br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+        function display(){
+            var oName = document.getElementById("day");
+            if (oName.value == 'Monday') {
+                alert("Garfield says: I hate Mondays!");
+            } else {
+                alert("At least it's not Monday");
+            };
+        };
+    </script>
+  </head>
+  <body>
+    <form>
+      Tag: <input type="day" name="day" id="day">
+      <button type="button" onclick="display()">
+           Submit
+      </button>
+    </form>
+  </body>
+</html>

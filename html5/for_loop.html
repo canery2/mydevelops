@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    function load(){
+        var oContent = document.getElementById("content");
+      var sOutput  = " ";
+            for ( var i = 1; i < 10; i++){
+            sOutput = sOutput + i + "<br>";
+            };
+      oContent.innerHTML = sOutput;
+      oContent.innerHTML += "Players. And the coach?";
+     };
+    </script>
+  </head>
+  <body onload="load()">
+     <p> A baseball team consists of...</p>
+     <div id="content">
+       <!-- Output from JavaScript -->
+    </div>
+  </body>
+</html>
