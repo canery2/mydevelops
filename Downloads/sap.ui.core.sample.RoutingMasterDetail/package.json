@@ -1,0 +1,13 @@
+{
+  "name": "sap-ui-core-sample--routing-master-detail",
+  "version": "1.0.0",
+  "author": "SAP SE",
+  "description": "Sample: Routing in a split screen layout with the master detail pattern",
+  "scripts": {
+    "start": "ui5 serve",
+    "build": "ui5 build"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^4"
+  }
+}
