@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGW_URETIM_ANA_PROJE_SRV" xml:lang="tr" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Calendar" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="pspnr"/>
+                    <PropertyRef Name="idRoot"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="pspnr" Type="Edm.String" Nullable="false" sap:label="Ana proje" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="idRoot" Type="Edm.String" Nullable="false" sap:label="Root" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="id" Type="Edm.String" Nullable="false" sap:label="Calendar Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pspid" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="CalendarDataNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.CalendarDataAssoc" FromRole="FromRole_CalendarDataAssoc" ToRole="ToRole_CalendarDataAssoc"/>
+            </EntityType>
+            <EntityType Name="ChildrenMt" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pspnr"/>
+                    <PropertyRef Name="IdRoot"/>
+                    <PropertyRef Name="IdMt"/>
+                </Key>
+                <Property Name="Pspnr" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdRoot" Type="Edm.String" Nullable="false" sap:label="Id Root" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdMt" Type="Edm.String" Nullable="false" sap:label="Id MT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pspid" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Level" Type="Edm.String" Nullable="false" sap:label="Level" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tanım" Type="Edm.String" Nullable="false" sap:label="Tanım" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Info" Type="Edm.String" Nullable="false" sap:label="Satır tipi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InfoTnm" Type="Edm.String" Nullable="false" sap:label="Satır tipi tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ChildrenMtChildrenTrNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.ChildrenMtChildrenTrAssoc" FromRole="FromRole_ChildrenMtChildrenTrAssoc" ToRole="ToRole_ChildrenMtChildrenTrAssoc"/>
+                <NavigationProperty Name="ChildrenMtNwtForWeekendsNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.ChildrenMtNwtForWeekendsAssoc" FromRole="FromRole_ChildrenMtNwtForWeekendsAssoc" ToRole="ToRole_ChildrenMtNwtForWeekendsAssoc"/>
+                <NavigationProperty Name="ChildrenMtOrderNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.ChildrenMtOrderAssoc" FromRole="FromRole_ChildrenMtOrderAssoc" ToRole="ToRole_ChildrenMtOrderAssoc"/>
+            </EntityType>
+            <EntityType Name="ChildrenTr" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pspnr"/>
+                    <PropertyRef Name="IdRoot"/>
+                    <PropertyRef Name="IdMt"/>
+                    <PropertyRef Name="IdTr"/>
+                </Key>
+                <Property Name="Pspnr" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdRoot" Type="Edm.String" Nullable="false" sap:label="Id Root" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdMt" Type="Edm.String" Nullable="false" sap:label="Id MT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdTr" Type="Edm.String" Nullable="false" sap:label="Id TR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pspid" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Level" Type="Edm.String" Nullable="false" sap:label="Level" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tanım" Type="Edm.String" Nullable="false" sap:label="Tanım" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Info" Type="Edm.String" Nullable="false" sap:label="Satır tipi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InfoTnm" Type="Edm.String" Nullable="false" sap:label="Satır tipi tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ChildrenTrOrderNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.ChildrenTrOrderAssoc" FromRole="FromRole_ChildrenTrOrderAssoc" ToRole="ToRole_ChildrenTrOrderAssoc"/>
+                <NavigationProperty Name="ChildrenTrNwtForWeekendsNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.ChildrenTrNwtForWeekendsAssoc" FromRole="FromRole_ChildrenTrNwtForWeekendsAssoc" ToRole="ToRole_ChildrenTrNwtForWeekendsAssoc"/>
+                <NavigationProperty Name="ChildrenTrChildrenIpNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.ChildrenTrChildrenIpAssoc" FromRole="FromRole_ChildrenTrChildrenIpAssoc" ToRole="ToRole_ChildrenTrChildrenIpAssoc"/>
+            </EntityType>
+            <EntityType Name="ChildrenIp" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pspnr"/>
+                    <PropertyRef Name="IdRoot"/>
+                    <PropertyRef Name="IdMt"/>
+                    <PropertyRef Name="IdTr"/>
+                    <PropertyRef Name="IdIp"/>
+                </Key>
+                <Property Name="Pspnr" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdRoot" Type="Edm.String" Nullable="false" sap:label="Id Root" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdMt" Type="Edm.String" Nullable="false" sap:label="Id MT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdTr" Type="Edm.String" Nullable="false" sap:label="Id TR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdIp" Type="Edm.String" Nullable="false" sap:label="Id IP" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pspid" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Level" Type="Edm.String" Nullable="false" sap:label="Level" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tanım" Type="Edm.String" Nullable="false" sap:label="Tanım" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Info" Type="Edm.String" Nullable="false" sap:label="Satır tipi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InfoTnm" Type="Edm.String" Nullable="false" sap:label="Satır tipi tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isgrubu" Type="Edm.String" Nullable="false" sap:label="İş grubu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsgrubuTnm" Type="Edm.String" Nullable="false" sap:label="İş grubu tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ChildrenIpNwtForWeekendsNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIpNwtForWeekendsAssoc" FromRole="FromRole_ChildrenIpNwtForWeekendsAssoc" ToRole="ToRole_ChildrenIpNwtForWeekendsAssoc"/>
+                <NavigationProperty Name="ChildrenIpChildrenIeNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIpChildrenIeAssoc" FromRole="FromRole_ChildrenIpChildrenIeAssoc" ToRole="ToRole_ChildrenIpChildrenIeAssoc"/>
+                <NavigationProperty Name="ChildrenIpOrderNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIpOrderAssoc" FromRole="FromRole_ChildrenIpOrderAssoc" ToRole="ToRole_ChildrenIpOrderAssoc"/>
+            </EntityType>
+            <EntityType Name="ChildrenIe" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pspnr"/>
+                    <PropertyRef Name="IdRoot"/>
+                    <PropertyRef Name="IdMt"/>
+                    <PropertyRef Name="IdTr"/>
+                    <PropertyRef Name="IdIp"/>
+                    <PropertyRef Name="IdIe"/>
+                </Key>
+                <Property Name="Pspnr" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdRoot" Type="Edm.String" Nullable="false" sap:label="Id Root" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdMt" Type="Edm.String" Nullable="false" sap:label="Id MT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdTr" Type="Edm.String" Nullable="false" sap:label="Id TR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdIp" Type="Edm.String" Nullable="false" sap:label="Id IP" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdIe" Type="Edm.String" Nullable="false" sap:label="Id IE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pspid" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Level" Type="Edm.String" Nullable="false" sap:label="Level" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tanım" Type="Edm.String" Nullable="false" sap:label="Tanım" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsemriVarmi" Type="Edm.String" Nullable="false" sap:label="İşemri var mı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsemriStatu" Type="Edm.String" Nullable="false" sap:label="İşemri statüsü" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Info" Type="Edm.String" Nullable="false" sap:label="Satır tipi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InfoTnm" Type="Edm.String" Nullable="false" sap:label="Satır tipi tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Isgrubu" Type="Edm.String" Nullable="false" sap:label="İş grubu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsgrubuTnm" Type="Edm.String" Nullable="false" sap:label="İş grubu tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ChildrenIeConstraintNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIeConstraintAssoc" FromRole="FromRole_ChildrenIeConstraintAssoc" ToRole="ToRole_ChildrenIeConstraintAssoc"/>
+                <NavigationProperty Name="ChildrenIeMilestoneNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIeMilestoneAssoc" FromRole="FromRole_ChildrenIeMilestoneAssoc" ToRole="ToRole_ChildrenIeMilestoneAssoc"/>
+                <NavigationProperty Name="ChildrenIeOrderNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIeOrderAssoc" FromRole="FromRole_ChildrenIeOrderAssoc" ToRole="ToRole_ChildrenIeOrderAssoc"/>
+                <NavigationProperty Name="ChildrenIeNwtForWeekendsNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIeNwtForWeekendsAssoc" FromRole="FromRole_ChildrenIeNwtForWeekendsAssoc" ToRole="ToRole_ChildrenIeNwtForWeekendsAssoc"/>
+            </EntityType>
+            <EntityType Name="CalendarData" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pspnr"/>
+                    <PropertyRef Name="IdRoot"/>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Pspnr" Type="Edm.String" Nullable="false" sap:label="Ana proje" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdRoot" Type="Edm.String" Nullable="false" sap:label="Id Root" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" sap:label="Id Calendar" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pspid" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Starttime" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="STARTTIME" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Endtime" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="ENDTIME" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Milestone" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pspnr"/>
+                    <PropertyRef Name="IdRoot"/>
+                    <PropertyRef Name="IdMt"/>
+                    <PropertyRef Name="IdTr"/>
+                    <PropertyRef Name="IdIp"/>
+                    <PropertyRef Name="IdIe"/>
+                </Key>
+                <Property Name="Pspnr" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdRoot" Type="Edm.String" Nullable="false" sap:label="Id Root" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdMt" Type="Edm.String" Nullable="false" sap:label="Id MT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdTr" Type="Edm.String" Nullable="false" sap:label="Id TR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdIp" Type="Edm.String" Nullable="false" sap:label="Id IP" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdIe" Type="Edm.String" Nullable="false" sap:label="Id IE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pspid" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Endtime" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Level" Type="Edm.String" Nullable="false" sap:label="Level" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tooltip" Type="Edm.String" Nullable="false" sap:label="Tooltip" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="NwtForWeekends" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pspnr"/>
+                    <PropertyRef Name="IdRoot"/>
+                    <PropertyRef Name="IdMt"/>
+                    <PropertyRef Name="IdTr"/>
+                    <PropertyRef Name="IdIp"/>
+                    <PropertyRef Name="IdIe"/>
+                </Key>
+                <Property Name="Pspnr" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdRoot" Type="Edm.String" Nullable="false" sap:label="Id Root" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdMt" Type="Edm.String" Nullable="false" sap:label="Id Mt" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdTr" Type="Edm.String" Nullable="false" sap:label="Id Tr" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdIp" Type="Edm.String" Nullable="false" sap:label="Id Ip" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdIe" Type="Edm.String" Nullable="false" sap:label="Id Ie" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pspid" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" sap:label="Calendar Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Order" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pspnr"/>
+                    <PropertyRef Name="IdRoot"/>
+                    <PropertyRef Name="IdMt"/>
+                    <PropertyRef Name="IdTr"/>
+                    <PropertyRef Name="IdIp"/>
+                    <PropertyRef Name="IdIe"/>
+                </Key>
+                <Property Name="Pspnr" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdRoot" Type="Edm.String" Nullable="false" sap:label="Id Root" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdMt" Type="Edm.String" Nullable="false" sap:label="Id MT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdTr" Type="Edm.String" Nullable="false" sap:label="Id TR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdIp" Type="Edm.String" Nullable="false" sap:label="Id IP" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdIe" Type="Edm.String" Nullable="false" sap:label="Id IE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pspid" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Starttime" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Endtime" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Level" Type="Edm.String" Nullable="false" sap:label="LEVEL" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Relationship" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pspnr"/>
+                    <PropertyRef Name="IdRoot"/>
+                </Key>
+                <Property Name="Pspnr" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdRoot" Type="Edm.String" Nullable="false" sap:label="ID Root" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fromdataid" Type="Edm.String" Nullable="false" sap:label="From Data ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fromobjectpath" Type="Edm.String" Nullable="false" sap:label="From Object Path" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Todataid" Type="Edm.String" Nullable="false" sap:label="To Data Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Toobjectpath" Type="Edm.String" Nullable="false" sap:label="To Object Path" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RelationType" Type="Edm.Int32" Nullable="false" sap:label="Sayı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fromshapeid" Type="Edm.String" Nullable="false" sap:label="From Shape ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Toshapeid" Type="Edm.String" Nullable="false" sap:label="To Shape Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Style" Type="Edm.Int32" Nullable="false" sap:label="Sayı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tooltip" Type="Edm.String" Nullable="false" sap:label="Tooltip" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Guid" Type="Edm.String" Nullable="false" sap:label="GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pspid" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Root1" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pspnr"/>
+                    <PropertyRef Name="IdRoot"/>
+                </Key>
+                <Property Name="Pspnr" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdRoot" Type="Edm.String" Nullable="false" sap:label="Id Root" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Level" Type="Edm.String" Nullable="false" sap:label="Level" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pspid" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Root1ChildrenMtNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.Root1ChildrenMtAssoc" FromRole="FromRole_Root1ChildrenMtAssoc" ToRole="ToRole_Root1ChildrenMtAssoc"/>
+                <NavigationProperty Name="Root1CalendarNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.Root1CalendarAssoc" FromRole="FromRole_Root1CalendarAssoc" ToRole="ToRole_Root1CalendarAssoc"/>
+                <NavigationProperty Name="Root1RelationshipNav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.Root1RelationshipAssoc" FromRole="FromRole_Root1RelationshipAssoc" ToRole="ToRole_Root1RelationshipAssoc"/>
+            </EntityType>
+            <EntityType Name="First" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pspnr"/>
+                </Key>
+                <Property Name="EsUpModel" Type="ZGW_URETIM_ANA_PROJE_SRV.EsUpModel" Nullable="false"/>
+                <Property Name="Pspnr" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="FirstRoot1Nav" Relationship="ZGW_URETIM_ANA_PROJE_SRV.FirstRoot1Assoc" FromRole="FromRole_FirstRoot1Assoc" ToRole="ToRole_FirstRoot1Assoc"/>
+            </EntityType>
+            <EntityType Name="Constraint" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pspnr"/>
+                    <PropertyRef Name="IdRoot"/>
+                    <PropertyRef Name="IdMt"/>
+                    <PropertyRef Name="IdTr"/>
+                    <PropertyRef Name="IdIp"/>
+                    <PropertyRef Name="IdIe"/>
+                </Key>
+                <Property Name="Pspnr" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdRoot" Type="Edm.String" Nullable="false" sap:label="Id Root" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdMt" Type="Edm.String" Nullable="false" sap:label="Id MT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdTr" Type="Edm.String" Nullable="false" sap:label="Id TR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdIp" Type="Edm.String" Nullable="false" sap:label="Id IP" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdIe" Type="Edm.String" Nullable="false" sap:label="Id IE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pspid" Type="Edm.String" Nullable="false" sap:label="Proje tanımı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Time" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tooltip" Type="Edm.String" Nullable="false" sap:label="Tooltip" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ratationangle" Type="Edm.Int32" Nullable="false" sap:label="Sayı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <ComplexType Name="Root">
+                <Property Name="IdRoot" Type="Edm.String" Nullable="false" sap:label="Id Root" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Level" Type="Edm.String" Nullable="false" sap:label="Level" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pspnr" Type="Edm.String" Nullable="false" MaxLength="24" sap:label="Ana Proje" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pspid" Type="Edm.String" Nullable="false" MaxLength="24" sap:label="Proje Tanım" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <ComplexType Name="EsUpModel">
+                <Property Name="Root" Type="ZGW_URETIM_ANA_PROJE_SRV.Root" Nullable="false"/>
+            </ComplexType>
+            <Association Name="Root1ChildrenMtAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.Root1" Multiplicity="1" Role="FromRole_Root1ChildrenMtAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenMt" Multiplicity="*" Role="ToRole_Root1ChildrenMtAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Root1ChildrenMtAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Root1ChildrenMtAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Root1CalendarAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.Root1" Multiplicity="1" Role="FromRole_Root1CalendarAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.Calendar" Multiplicity="*" Role="ToRole_Root1CalendarAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Root1CalendarAssoc">
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="Pspnr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Root1CalendarAssoc">
+                        <PropertyRef Name="idRoot"/>
+                        <PropertyRef Name="pspnr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Root1RelationshipAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.Root1" Multiplicity="1" Role="FromRole_Root1RelationshipAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.Relationship" Multiplicity="*" Role="ToRole_Root1RelationshipAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Root1RelationshipAssoc">
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="Pspnr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Root1RelationshipAssoc">
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="Pspnr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ChildrenTrChildrenIpAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenTr" Multiplicity="*" Role="FromRole_ChildrenTrChildrenIpAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIp" Multiplicity="*" Role="ToRole_ChildrenTrChildrenIpAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ChildrenTrChildrenIpAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdTr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ChildrenTrChildrenIpAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdTr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ChildrenTrNwtForWeekendsAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenTr" Multiplicity="*" Role="FromRole_ChildrenTrNwtForWeekendsAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.NwtForWeekends" Multiplicity="*" Role="ToRole_ChildrenTrNwtForWeekendsAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ChildrenTrNwtForWeekendsAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdTr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ChildrenTrNwtForWeekendsAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdTr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ChildrenTrOrderAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenTr" Multiplicity="*" Role="FromRole_ChildrenTrOrderAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.Order" Multiplicity="*" Role="ToRole_ChildrenTrOrderAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ChildrenTrOrderAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdTr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ChildrenTrOrderAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdTr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ChildrenIpChildrenIeAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIp" Multiplicity="*" Role="FromRole_ChildrenIpChildrenIeAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIe" Multiplicity="*" Role="ToRole_ChildrenIpChildrenIeAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ChildrenIpChildrenIeAssoc">
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdTr"/>
+                        <PropertyRef Name="IdIp"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="Pspnr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ChildrenIpChildrenIeAssoc">
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdTr"/>
+                        <PropertyRef Name="IdIp"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="Pspnr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ChildrenIpNwtForWeekendsAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIp" Multiplicity="*" Role="FromRole_ChildrenIpNwtForWeekendsAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.NwtForWeekends" Multiplicity="*" Role="ToRole_ChildrenIpNwtForWeekendsAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ChildrenIpNwtForWeekendsAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdTr"/>
+                        <PropertyRef Name="IdIp"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ChildrenIpNwtForWeekendsAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdTr"/>
+                        <PropertyRef Name="IdIp"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ChildrenIpOrderAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIp" Multiplicity="*" Role="FromRole_ChildrenIpOrderAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.Order" Multiplicity="*" Role="ToRole_ChildrenIpOrderAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ChildrenIpOrderAssoc">
+                        <PropertyRef Name="IdIp"/>
+                        <PropertyRef Name="IdTr"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ChildrenIpOrderAssoc">
+                        <PropertyRef Name="IdIp"/>
+                        <PropertyRef Name="IdTr"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ChildrenIeConstraintAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIe" Multiplicity="*" Role="FromRole_ChildrenIeConstraintAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.Constraint" Multiplicity="*" Role="ToRole_ChildrenIeConstraintAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ChildrenIeConstraintAssoc">
+                        <PropertyRef Name="IdIe"/>
+                        <PropertyRef Name="IdIp"/>
+                        <PropertyRef Name="IdTr"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="Pspnr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ChildrenIeConstraintAssoc">
+                        <PropertyRef Name="IdIe"/>
+                        <PropertyRef Name="IdIp"/>
+                        <PropertyRef Name="IdTr"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="Pspnr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ChildrenIeMilestoneAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIe" Multiplicity="*" Role="FromRole_ChildrenIeMilestoneAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.Milestone" Multiplicity="*" Role="ToRole_ChildrenIeMilestoneAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ChildrenIeMilestoneAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdTr"/>
+                        <PropertyRef Name="IdIp"/>
+                        <PropertyRef Name="IdIe"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ChildrenIeMilestoneAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdTr"/>
+                        <PropertyRef Name="IdIp"/>
+                        <PropertyRef Name="IdIe"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ChildrenIeOrderAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIe" Multiplicity="*" Role="FromRole_ChildrenIeOrderAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.Order" Multiplicity="*" Role="ToRole_ChildrenIeOrderAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ChildrenIeOrderAssoc">
+                        <PropertyRef Name="IdIe"/>
+                        <PropertyRef Name="IdIp"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdTr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ChildrenIeOrderAssoc">
+                        <PropertyRef Name="IdIe"/>
+                        <PropertyRef Name="IdIp"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdTr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ChildrenIeNwtForWeekendsAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIe" Multiplicity="*" Role="FromRole_ChildrenIeNwtForWeekendsAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.NwtForWeekends" Multiplicity="*" Role="ToRole_ChildrenIeNwtForWeekendsAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ChildrenIeNwtForWeekendsAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdTr"/>
+                        <PropertyRef Name="IdIp"/>
+                        <PropertyRef Name="IdIe"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ChildrenIeNwtForWeekendsAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                        <PropertyRef Name="IdTr"/>
+                        <PropertyRef Name="IdIp"/>
+                        <PropertyRef Name="IdIe"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CalendarDataAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.Calendar" Multiplicity="*" Role="FromRole_CalendarDataAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.CalendarData" Multiplicity="*" Role="ToRole_CalendarDataAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_CalendarDataAssoc">
+                        <PropertyRef Name="pspnr"/>
+                        <PropertyRef Name="idRoot"/>
+                        <PropertyRef Name="id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_CalendarDataAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ChildrenMtChildrenTrAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenMt" Multiplicity="*" Role="FromRole_ChildrenMtChildrenTrAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenTr" Multiplicity="*" Role="ToRole_ChildrenMtChildrenTrAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ChildrenMtChildrenTrAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ChildrenMtChildrenTrAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ChildrenMtNwtForWeekendsAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenMt" Multiplicity="*" Role="FromRole_ChildrenMtNwtForWeekendsAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.NwtForWeekends" Multiplicity="*" Role="ToRole_ChildrenMtNwtForWeekendsAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ChildrenMtNwtForWeekendsAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ChildrenMtNwtForWeekendsAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ChildrenMtOrderAssoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.ChildrenMt" Multiplicity="*" Role="FromRole_ChildrenMtOrderAssoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.Order" Multiplicity="*" Role="ToRole_ChildrenMtOrderAssoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ChildrenMtOrderAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ChildrenMtOrderAssoc">
+                        <PropertyRef Name="Pspnr"/>
+                        <PropertyRef Name="IdRoot"/>
+                        <PropertyRef Name="IdMt"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="FirstRoot1Assoc" sap:content-version="1">
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.First" Multiplicity="1" Role="FromRole_FirstRoot1Assoc"/>
+                <End Type="ZGW_URETIM_ANA_PROJE_SRV.Root1" Multiplicity="1" Role="ToRole_FirstRoot1Assoc"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_FirstRoot1Assoc">
+                        <PropertyRef Name="Pspnr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_FirstRoot1Assoc">
+                        <PropertyRef Name="Pspnr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZGW_URETIM_ANA_PROJE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="CalendarSet" EntityType="ZGW_URETIM_ANA_PROJE_SRV.Calendar" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ChildrenMtSet" EntityType="ZGW_URETIM_ANA_PROJE_SRV.ChildrenMt" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ChildrenTrSet" EntityType="ZGW_URETIM_ANA_PROJE_SRV.ChildrenTr" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ChildrenIpSet" EntityType="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIp" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ChildrenIeSet" EntityType="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIe" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="CalendarDataSet" EntityType="ZGW_URETIM_ANA_PROJE_SRV.CalendarData" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="MilestoneSet" EntityType="ZGW_URETIM_ANA_PROJE_SRV.Milestone" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="NwtForWeekendsSet" EntityType="ZGW_URETIM_ANA_PROJE_SRV.NwtForWeekends" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="OrderSet" EntityType="ZGW_URETIM_ANA_PROJE_SRV.Order" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="RelationshipSet" EntityType="ZGW_URETIM_ANA_PROJE_SRV.Relationship" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="Root1Set" EntityType="ZGW_URETIM_ANA_PROJE_SRV.Root1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="FirstSet" EntityType="ZGW_URETIM_ANA_PROJE_SRV.First" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ConstraintSet" EntityType="ZGW_URETIM_ANA_PROJE_SRV.Constraint" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="CalendarDataAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.CalendarDataAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CalendarSet" Role="FromRole_CalendarDataAssoc"/>
+                    <End EntitySet="CalendarDataSet" Role="ToRole_CalendarDataAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="Root1CalendarAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.Root1CalendarAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Root1Set" Role="FromRole_Root1CalendarAssoc"/>
+                    <End EntitySet="CalendarSet" Role="ToRole_Root1CalendarAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="Root1ChildrenMtAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.Root1ChildrenMtAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Root1Set" Role="FromRole_Root1ChildrenMtAssoc"/>
+                    <End EntitySet="ChildrenMtSet" Role="ToRole_Root1ChildrenMtAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="FirstRoot1AssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.FirstRoot1Assoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="FirstSet" Role="FromRole_FirstRoot1Assoc"/>
+                    <End EntitySet="Root1Set" Role="ToRole_FirstRoot1Assoc"/>
+                </AssociationSet>
+                <AssociationSet Name="ChildrenTrOrderAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.ChildrenTrOrderAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ChildrenTrSet" Role="FromRole_ChildrenTrOrderAssoc"/>
+                    <End EntitySet="OrderSet" Role="ToRole_ChildrenTrOrderAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="ChildrenIpOrderAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIpOrderAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ChildrenIpSet" Role="FromRole_ChildrenIpOrderAssoc"/>
+                    <End EntitySet="OrderSet" Role="ToRole_ChildrenIpOrderAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="ChildrenMtChildrenTrAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.ChildrenMtChildrenTrAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ChildrenMtSet" Role="FromRole_ChildrenMtChildrenTrAssoc"/>
+                    <End EntitySet="ChildrenTrSet" Role="ToRole_ChildrenMtChildrenTrAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="ChildrenIeOrderAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIeOrderAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ChildrenIeSet" Role="FromRole_ChildrenIeOrderAssoc"/>
+                    <End EntitySet="OrderSet" Role="ToRole_ChildrenIeOrderAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="ChildrenTrChildrenIpAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.ChildrenTrChildrenIpAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ChildrenTrSet" Role="FromRole_ChildrenTrChildrenIpAssoc"/>
+                    <End EntitySet="ChildrenIpSet" Role="ToRole_ChildrenTrChildrenIpAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="ChildrenIpChildrenIeAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIpChildrenIeAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ChildrenIpSet" Role="FromRole_ChildrenIpChildrenIeAssoc"/>
+                    <End EntitySet="ChildrenIeSet" Role="ToRole_ChildrenIpChildrenIeAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="ChildrenIeNwtForWeekendsAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIeNwtForWeekendsAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ChildrenIeSet" Role="FromRole_ChildrenIeNwtForWeekendsAssoc"/>
+                    <End EntitySet="NwtForWeekendsSet" Role="ToRole_ChildrenIeNwtForWeekendsAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="ChildrenTrNwtForWeekendsAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.ChildrenTrNwtForWeekendsAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ChildrenTrSet" Role="FromRole_ChildrenTrNwtForWeekendsAssoc"/>
+                    <End EntitySet="NwtForWeekendsSet" Role="ToRole_ChildrenTrNwtForWeekendsAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="ChildrenIeConstraintSet" Association="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIeConstraintAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ChildrenIeSet" Role="FromRole_ChildrenIeConstraintAssoc"/>
+                    <End EntitySet="ConstraintSet" Role="ToRole_ChildrenIeConstraintAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="ChildrenIpNwtForWeekendsAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIpNwtForWeekendsAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ChildrenIpSet" Role="FromRole_ChildrenIpNwtForWeekendsAssoc"/>
+                    <End EntitySet="NwtForWeekendsSet" Role="ToRole_ChildrenIpNwtForWeekendsAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="ChildrenIeMilestoneAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.ChildrenIeMilestoneAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ChildrenIeSet" Role="FromRole_ChildrenIeMilestoneAssoc"/>
+                    <End EntitySet="MilestoneSet" Role="ToRole_ChildrenIeMilestoneAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="ChildrenMtOrderAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.ChildrenMtOrderAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ChildrenMtSet" Role="FromRole_ChildrenMtOrderAssoc"/>
+                    <End EntitySet="OrderSet" Role="ToRole_ChildrenMtOrderAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="ChildrenMtNwtForWeekendsAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.ChildrenMtNwtForWeekendsAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ChildrenMtSet" Role="FromRole_ChildrenMtNwtForWeekendsAssoc"/>
+                    <End EntitySet="NwtForWeekendsSet" Role="ToRole_ChildrenMtNwtForWeekendsAssoc"/>
+                </AssociationSet>
+                <AssociationSet Name="Root1RelationshipAssocSet" Association="ZGW_URETIM_ANA_PROJE_SRV.Root1RelationshipAssoc" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Root1Set" Role="FromRole_Root1RelationshipAssoc"/>
+                    <End EntitySet="RelationshipSet" Role="ToRole_Root1RelationshipAssoc"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://erpdevapp.gemak.local:8000/sap/opu/odata/sap/ZGW_URETIM_ANA_PROJE_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://erpdevapp.gemak.local:8000/sap/opu/odata/sap/ZGW_URETIM_ANA_PROJE_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
