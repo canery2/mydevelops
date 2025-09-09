@@ -89,6 +89,11 @@
 				"pattern": "employees/{employeeId}",
 				"name": "employee",
 				"target": "employee"
+			},
+			{
+				"pattern": "employees/{employeeId}/resume:?query",
+				"name": "employeeResume",
+				"target": "employeeResume"
 			}],
 			"targets": {
 				"home": {
@@ -111,6 +116,13 @@
 					"id": "employee",
 					"name": "employee.Employee",
 					"level" : 3
+				},
+				"employeeResume": {
+					"id": "resume",
+					"name": "employee.resume",
+					"level": 4,
+					"transition": "flip"
+
 				}
 			}
 		}

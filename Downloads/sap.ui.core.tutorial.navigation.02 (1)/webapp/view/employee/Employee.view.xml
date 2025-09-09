@@ -14,17 +14,17 @@
 			<Panel
 				id="employeePanel"
 				width="auto"
-				class="sapUiResponsiveMargin sapUiNoContentPadding">
+				class="sapUiNoContentPadding">
 				<headerToolbar>
 					<Toolbar>
 						<Title text="{i18n>EmployeeIDColon} {EmployeeID}" level="H2"/>
 						<ToolbarSpacer />
+						<Link text="{i18n>FlipToResume}" tooltip="{i18n>FlipToResume.tooltip}" press=".onShowResume"/>
 					</Toolbar>
 				</headerToolbar>
 				<content>
 					<f:SimpleForm
-						minWidth="1024"
-						editable="false" 
+						editable="false"
 						layout="ResponsiveGridLayout"
 						labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
 						columnsL="1" columnsM="1">
