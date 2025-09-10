@@ -50,10 +50,15 @@ sap.ui.define(
             oQueryParameter.sortField,
             oQueryParameter.sortDescending
           );
+          if (oQueryParameter.showDialog) {
+            this._oVSD.open();
+          }
         },
 
         onSortButtonPressed: function () {
           this._oVSD.open();
+          this._oRouterArgs["?query"].showDialog = 1;
+          oRouter.navTo("employeeOverview", this._oRouterArgs);
         },
 
         onSearchEmployeesTable: function (oEvent) {
@@ -76,6 +81,16 @@ sap.ui.define(
               this._oRouterArgs["?query"].sortField = oSortItem.getKey();
               this._oRouterArgs["?query"].sortDescending =
                 oEvent.getParameter("sortDescending");
+              delete this._oRouterArgs["?query"].showDialog;
+
+              oRouter.navTo(
+                "employeeOverview",
+                this._oRouterArgs,
+                true /*without history*/
+              );
+            }.bind(this),
+            cancel: function (oEvent) {
+              delete this._oRouterArgs["?query"].showDialog;
               oRouter.navTo(
                 "employeeOverview",
                 this._oRouterArgs,
