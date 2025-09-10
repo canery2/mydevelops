@@ -71,6 +71,18 @@ sap.ui.define(
             true /*no history*/
           );
         },
+		onItemPressed: function (oEvent) {
+			var oItem, oCtx, oRouter;
+			oItem = oEvent.getParameter("listItem");
+			oCtx = oItem.getBindingContext();
+			this.getRouter().navTo("employeeResume",{
+				employeeId : oCtx.getProperty("EmployeeID"),
+				"?query": {
+					tab: "Info"
+				}
+			})
+
+		},
 
         _initViewSettingsDialog: function () {
           var oRouter = this.getRouter();
