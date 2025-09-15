@@ -86,9 +86,17 @@
 				"name": "employeeList",
 				"target": "employees"
 			}, {
+				"pattern": "employees/overview:?query:",
+				"name": "employeeOverview",
+				"target": ["EmployeeOverviewTop", "EmployeeOverviewContent"]
+			}, {
 				"pattern": "employees/{employeeId}",
 				"name": "employee",
 				"target": "employee"
+			}, {
+				"pattern": "employees/{employeeId}/resume:?query:",
+				"name": "employeeResume",
+				"target": "employeeResume"
 			}],
 			"targets": {
 				"home": {
@@ -111,6 +119,50 @@
 					"id": "employee",
 					"name": "employee.Employee",
 					"level" : 3
+				},
+				"employeeResume": {
+					"id": "resume",
+					"name": "employee.Resume",
+					"level" : 4,
+					"transition": "flip"
+				},
+				"resumeTabHobbies": {
+					"parent": "employeeResume",
+					"id": "resumeHobbies",
+					"path": "sap.ui.demo.nav.view.employee",
+					"name": "ResumeHobbies",
+					"controlId": "hobbiesTab",
+					"controlAggregation": "content"
+				},
+				"resumeTabNotes": {
+					"parent": "employeeResume",
+					"id": "resumeNotes",
+					"path": "sap.ui.demo.nav.view.employee",
+					"name": "ResumeNotes",
+					"controlId": "notesTab",
+					"controlAggregation": "content"
+				},
+				"EmployeeOverview": {
+					"id": "employeeOverview",
+					"path": "sap.ui.demo.nav.view.employee.overview",
+					"name": "EmployeeOverview",
+					"level" : 2
+				},
+				"EmployeeOverviewTop": {
+					"parent": "EmployeeOverview",
+					"id": "employeeOverviewTop",
+					"path": "sap.ui.demo.nav.view.employee.overview",
+					"name": "EmployeeOverviewTop",
+					"controlId": "EmployeeOverviewParent",
+					"controlAggregation": "content"
+				},
+				"EmployeeOverviewContent": {
+					"parent": "EmployeeOverview",
+					"id": "employeeOverviewContent",
+					"path": "sap.ui.demo.nav.view.employee.overview",
+					"name": "EmployeeOverviewContent",
+					"controlId": "EmployeeOverviewParent",
+					"controlAggregation": "content"
 				}
 			}
 		}
