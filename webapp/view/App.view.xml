@@ -19,7 +19,7 @@
 				<Label labelFor="address" text="{i18n>address}" showColon="true"/>
 				<FormattedText class="sapUiSmallMarginBottom"
 					htmlText="{/address/street}&lt;br&gt;{/address/zip} {/address/city}&lt;br&gt;{/address/country}"
-					id="address" width="200px"/>
+					id="address" width="230px"/>
 			</l:VerticalLayout>
 		</content>
 	</Panel>
