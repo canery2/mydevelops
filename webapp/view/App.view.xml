@@ -1,4 +1,5 @@
 <mvc:View
+	controllerName="ui5.databinding.controller.App"
 	xmlns="sap.m"
 	xmlns:form="sap.ui.layout.form"
 	xmlns:l="sap.ui.layout"
@@ -19,7 +20,15 @@
 				<Label labelFor="address" text="{i18n>address}" showColon="true"/>
 				<FormattedText class="sapUiSmallMarginBottom"
 					htmlText="{/address/street}&lt;br&gt;{/address/zip} {/address/city}&lt;br&gt;{/address/country}"
-					id="address" width="230px"/>
+					id="address" width="200px"/>
+				<Link href="{
+						parts: [
+							'/firstName',
+							'/lastName'
+						],
+						formatter: '.formatMail'
+					}"
+					text="{i18n>sendEmail}"/>
 			</l:VerticalLayout>
 		</content>
 	</Panel>
