@@ -17,6 +17,14 @@ sap.ui.define([
 
 		formatStockValue(fUnitPrice, iStockLevel, sCurrCode) {
 			return new Currency().formatValue([fUnitPrice * iStockLevel, sCurrCode], "string");
+		},
+
+		onItemSelected(oEvent) {
+			const oSelectedItem = oEvent.getSource();
+			const oContext = oSelectedItem.getBindingContext("products");
+			const sPath = oContext.getPath();
+			const oProductDetailPanel = this.byId("productDetailsPanel");
+			oProductDetailPanel.bindElement({ path: sPath, model: "products" });
 		}
 	});
 });
